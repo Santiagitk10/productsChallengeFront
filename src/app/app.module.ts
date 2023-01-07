@@ -7,11 +7,13 @@ import { ProductService } from './services/product.service';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NewProductComponent } from './components/new-product/new-product.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
-  { path: 'newProduct', component: NewProductComponent }
+  { path: 'newProduct', component: NewProductComponent },
+  { path: 'detail/:productId', component: ProductDetailComponent }
 ];
 
 
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ProductsComponent,
-    NewProductComponent
+    NewProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

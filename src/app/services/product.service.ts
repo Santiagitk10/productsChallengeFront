@@ -32,4 +32,9 @@ export class ProductService {
     return this.http.post<CreateProductModel>(`${this.apiUrl}/Post`,newProduct, httpOptions);
   }
 
+
+  getProductById(id:number): Observable<GetProductModel>{
+    return this.http.get<GetProductModel>(`${this.apiUrl}/Get/${id}`);
+  }
+
 }

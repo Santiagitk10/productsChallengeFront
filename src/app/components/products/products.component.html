@@ -17,8 +17,11 @@
 
 <a href="/newProduct">New Product</a>
 
+<br>
+<br>
+
 <ul>
     <li *ngFor="let product of products">
-        {{product.productName}}
+        <a [routerLink]="['/detail',product.productId]">{{product.productName}}</a>
     </li>
 </ul>
