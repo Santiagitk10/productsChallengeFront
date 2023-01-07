@@ -16,10 +16,9 @@ export class ProductsComponent  {
   constructor(private productService: ProductService){}
 
 
-  // getProducts(){
-  //   this.productService.getProducts(this.pageNumber, this.pageSize).subscribe((products) => (this.products = products));
-    
-  // }
+  ngOnInit(): void {
+    this.getProducts();
+  }
 
   getProducts(){
     this.productService.getProducts(this.pageNumber, this.pageSize).subscribe((products) => this.products = products);

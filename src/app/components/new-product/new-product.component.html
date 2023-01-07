@@ -1,0 +1,15 @@
+
+<h1>Create a New Product</h1>
+
+<form (ngSubmit)="createProduct()">
+    Product Name: <input type="text" name="productName"  [(ngModel)]="productName"><br><br>
+    Amount in Inventory: <input type="number" name="inInventory" [(ngModel)]="inInventory"><br><br>
+    Minimun purchase Amount: <input type="number" name="min" [(ngModel)]="min"><br><br>
+    Maximum purchase Amount: <input type="number" name="max" [(ngModel)]="max">
+    
+    <br>
+    <br>
+
+    <button >Create Product</button>
+
+</form>

@@ -6,17 +6,20 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductService } from './services/product.service';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NewProductComponent } from './components/new-product/new-product.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: ProductsComponent }
+  { path: '', component: ProductsComponent },
+  { path: 'newProduct', component: NewProductComponent }
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,

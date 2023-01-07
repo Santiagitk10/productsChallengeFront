@@ -1,8 +1,17 @@
 import { NumberFormatStyle } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CreateProductModel } from '../models/CreateProductModel';
 import { GetProductModel } from '../models/GetProductModel';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +27,9 @@ export class ProductService {
     return this.http.get<GetProductModel[]>(`${this.apiUrl}/Get?PageNumber=${pageNumber}&PageSize=${pageSize}`);
   }
 
+
+  createProduct(newProduct:CreateProductModel): Observable<CreateProductModel>{
+    return this.http.post<CreateProductModel>(`${this.apiUrl}/Post`,newProduct, httpOptions);
+  }
 
 }
