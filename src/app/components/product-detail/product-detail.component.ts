@@ -27,10 +27,10 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.productId =  this.route.snapshot.params['productId'];
     this.productService.getProductById(this.productId).subscribe(product => {
-      this.productName = this.product.productName;
-      this.inInventory = this.product.inInventory;
-      this.min = this.product.min;
-      this.max = this.product.max
+      this.productName = product.productName;
+      this.inInventory = product.inInventory;
+      this.min = product.min;
+      this.max = product.max
     });
 
     
