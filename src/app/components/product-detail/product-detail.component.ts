@@ -40,13 +40,14 @@ export class ProductDetailComponent implements OnInit {
   //TODO IMPLEMENTATION OF THE EDIT METHOD
   editProduct(){
 
-    //THIS MODEL NEEDS TO BE CHANGE FOR EDIT MODEL AS PER SERVER DTO
-    // const newProduct: CreateProductModel = {
-    //   productName: this.productName,
-    //   inInventory: this.inInventory,
-    //   min: this.min,
-    //   max: this.max
-    // }
+    const newProduct: CreateProductModel = {
+      productName: this.productName,
+      inInventory: this.inInventory,
+      min: this.min,
+      max: this.max
+    }
+
+    this.productService.updateProduct(this.productId,newProduct).subscribe();
 
     this.router.navigate(['']);
 

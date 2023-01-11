@@ -27,14 +27,23 @@ export class ProductService {
     return this.http.get<GetProductModel[]>(`${this.apiUrl}/Get?PageNumber=${pageNumber}&PageSize=${pageSize}`);
   }
 
+  getProductById(id:number): Observable<GetProductModel>{
+    return this.http.get<GetProductModel>(`${this.apiUrl}/Get/${id}`);
+  }
 
   createProduct(newProduct:CreateProductModel): Observable<CreateProductModel>{
     return this.http.post<CreateProductModel>(`${this.apiUrl}/Post`,newProduct, httpOptions);
   }
 
 
-  getProductById(id:number): Observable<GetProductModel>{
-    return this.http.get<GetProductModel>(`${this.apiUrl}/Get/${id}`);
+  updateProduct(id:number, product: CreateProductModel) {
+    return this.http.put(`${this.apiUrl}/Put/${id}`,product, httpOptions);
+  } 
+
+
+  deleteProduct(id:number){
+    return this.http.delete(`${this.apiUrl}/Delete/${id}`);
   }
+
 
 }

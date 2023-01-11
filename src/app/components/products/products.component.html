@@ -23,5 +23,6 @@
 <ul>
     <li *ngFor="let product of products">
         <a [routerLink]="['/detail',product.productId]">{{product.productName}}</a>
+        <span><a href="" (click)="deleteProduct(product.productId)" >  Delete</a></span>
     </li>
 </ul>

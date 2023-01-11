@@ -25,4 +25,10 @@ export class ProductsComponent  {
   }
   
 
+  deleteProduct(id: number): void{
+    this.productService.deleteProduct(id).subscribe();
+    this.getProducts();
+    console.log("her");
+  }
+
 }
