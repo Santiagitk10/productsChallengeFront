@@ -37,7 +37,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
 
-  //TODO IMPLEMENTATION OF THE EDIT METHOD
   editProduct(){
 
     const newProduct: CreateProductModel = {

@@ -12,6 +12,7 @@ export class ProductsComponent  {
   products: GetProductModel[] = [];
   pageNumber: number = 1;
   pageSize: number = 4;
+  cartProductData = [];
 
   constructor(private productService: ProductService){}
 
@@ -30,5 +31,14 @@ export class ProductsComponent  {
     this.getProducts();
     console.log("her");
   }
+
+
+  addProductData(newProductData: string){
+    console.log("HERE");
+    this.cartProductData.push(newProductData);
+    console.log(this.cartProductData);
+  }
+
+
 
 }

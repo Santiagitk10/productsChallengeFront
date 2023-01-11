@@ -24,5 +24,7 @@
     <li *ngFor="let product of products">
         <a [routerLink]="['/detail',product.productId]">{{product.productName}}</a>
         <span><a href="" (click)="deleteProduct(product.productId)" >  Delete</a></span>
+        <!-- <a [routerLink]="['/addToCart',product.productId]"> Add To Cart</a> -->
+        <app-add-to-cart (productPurchaseData)="addProductData($event)" [productId]="product.productId"></app-add-to-cart>
     </li>
 </ul>

@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     ProductsComponent,
     NewProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,
