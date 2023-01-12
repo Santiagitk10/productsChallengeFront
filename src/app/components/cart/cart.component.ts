@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
 cartProductData = [];
 productNames: string[] = [];
 quantities: number[] = [];
+canProceedToCheckout: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,18 +22,22 @@ quantities: number[] = [];
   }
 
   ngOnInit(): void {
-    
     this.cartProductData =  this.route.snapshot.params['cartString'].split(",");
     this.cartProductData.forEach(element => {
       let productId = parseInt(element.split(".")[0]);
       let quantity = parseInt(element.split(".")[1]);
-      this.productService.getProductById(productId).subscribe(p => {
-        this.productNames.push(p.productName);
-      })
+      if(!isNaN(productId)){
+        this.productService.getProductById(productId).subscribe(p => {
+          this.productNames.push(p.productName);
+        })
+        this.quantities.push(quantity);
+      }
       
-
-      this.quantities.push(quantity);
     });
+
+    if(this.cartProductData[0] != ""){
+      this.canProceedToCheckout = true;
+    }
   }
 
 }

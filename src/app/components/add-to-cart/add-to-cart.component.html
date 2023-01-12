@@ -1,4 +1,4 @@
 
 <label>Enter Quantity</label>
-<input type="number" #quantity [(ngModel)]="quantityInput">
+<input type="number" #quantity [(ngModel)]="quantityInput" onkeydown="return false" min="0">
 <button (click)="addProductPurchaseData(quantity.value)" [disabled]="quantityInput === ''">Add To Cart</button>

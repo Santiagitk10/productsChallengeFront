@@ -1,0 +1,24 @@
+
+
+<h1>Confirm Purchase</h1>
+
+
+<form (ngSubmit)="createProduct()">
+
+
+    <label for="typeId-select">Enter Type of ID: </label>
+
+    <select name="types" id="typeId-select" [(ngModel)]="idType">
+        <option value="CC">CC</option>
+        <option value="CE">CE</option>
+        <option value="TI">TI</option>
+        <option value="PASSPORT">PASSPORT</option>
+    </select>
+
+    Enter your ID: <input type="text" name="id" [(ngModel)]="id"><br><br>
+    Enter your Full Name: <input type="text" name="customerName" [(ngModel)]="fullName"><br><br>
+
+
+    <button [disabled]="id === '' || idType === '' || fullName === ''">Proceed</button>
+
+</form>

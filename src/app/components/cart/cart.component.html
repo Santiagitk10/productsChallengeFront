@@ -7,3 +7,6 @@
         </li>
     </div>
 </ul>
+
+
+<app-finish-purchase *ngIf="canProceedToCheckout" [purchaseData]="cartProductData"></app-finish-purchase>
