@@ -13,6 +13,7 @@ export class ProductsComponent  {
   pageNumber: number = 1;
   pageSize: number = 4;
   cartProductData = [];
+  cartQuantity: number = 0;
 
   constructor(private productService: ProductService){}
 
@@ -29,14 +30,16 @@ export class ProductsComponent  {
   deleteProduct(id: number): void{
     this.productService.deleteProduct(id).subscribe();
     this.getProducts();
-    console.log("her");
   }
 
 
   addProductData(newProductData: string){
-    console.log("HERE");
+    this.cartQuantity = 0;
     this.cartProductData.push(newProductData);
-    console.log(this.cartProductData);
+    this.cartProductData.forEach(element => {
+      let productQuantity = parseInt(element.split(".")[1]);
+      this.cartQuantity += productQuantity;
+    });
   }
 
 

@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'newProduct', component: NewProductComponent },
-  { path: 'detail/:productId', component: ProductDetailComponent }
+  { path: 'detail/:productId', component: ProductDetailComponent },
+  { path: 'cart/:cartString', component: CartComponent }
 ];
 
 
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     ProductsComponent,
     NewProductComponent,
     ProductDetailComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

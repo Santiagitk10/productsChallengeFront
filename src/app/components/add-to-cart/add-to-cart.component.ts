@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AddToCartComponent  {
 
+  quantityInput: string = "";
 
   @Input() productId: number;
 
@@ -18,7 +19,8 @@ export class AddToCartComponent  {
 
 
   addProductPurchaseData(value: string){
-    this.productPurchaseData.emit(`${this.productId},${value}`);
+    this.productPurchaseData.emit(`${this.productId}.${value}`);
+    this.quantityInput = "";
   }
 
 }
