@@ -1,0 +1,24 @@
+<h1>Purchase History</h1>
+<br>
+<br>
+
+<table>
+    <tr>
+      <th>Purchase ID</th>
+      <th>Date</th>
+      <th>ID Type</th>
+      <th>ID</th>
+      <th>Client Name</th>
+      <th>Product ID</th>
+      <th>Product Name</th>
+    </tr>
+    <tr *ngFor="let purchase of purchases">
+      <td>{{purchase.purchaseId}}</td>
+      <td>{{purchase.date}}</td>
+      <td>{{purchase.idType}}</td>
+      <td>{{purchase.id}}</td>
+      <td>{{purchase.clientName}}</td>
+      <td>{{purchase.productId}}</td>
+      <td>{{purchase.productName}}</td>
+    </tr>
+</table>

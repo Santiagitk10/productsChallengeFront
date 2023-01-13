@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CreatePurchaseModel } from '../models/CreatePurchaseModel';
+import { GetPurchaseModel } from '../models/GetPurchaseModel';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -25,5 +26,8 @@ export class PurchaseService {
   }
 
 
+  getAllPurchases(): Observable<GetPurchaseModel[]>{
+    return this.http.get<GetPurchaseModel[]>(`${this.apiUrl}/Get`)
+  }
 
 }

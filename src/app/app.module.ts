@@ -12,13 +12,15 @@ import { AddToCartComponent } from './components/add-to-cart/add-to-cart.compone
 import { CartComponent } from './components/cart/cart.component';
 import { FinishPurchaseComponent } from './components/finish-purchase/finish-purchase.component';
 import { PurchaseService } from './services/purchase.service';
+import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'newProduct', component: NewProductComponent },
   { path: 'detail/:productId', component: ProductDetailComponent },
-  { path: 'cart/:cartString', component: CartComponent }
+  { path: 'cart/:cartString', component: CartComponent },
+  { path: 'purchaseList', component: PurchaseListComponent }
 ];
 
 
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     ProductDetailComponent,
     AddToCartComponent,
     CartComponent,
-    FinishPurchaseComponent
+    FinishPurchaseComponent,
+    PurchaseListComponent
   ],
   imports: [
     BrowserModule,
