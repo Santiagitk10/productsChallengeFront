@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class CartComponent implements OnInit {
 
-cartProductData = [];
+cartProductData: string[] = [];
 productNames: string[] = [];
 quantities: number[] = [];
 canProceedToCheckout: boolean = false;
@@ -38,6 +38,7 @@ canProceedToCheckout: boolean = false;
     if(this.cartProductData[0] != ""){
       this.canProceedToCheckout = true;
     }
+
   }
 
 }

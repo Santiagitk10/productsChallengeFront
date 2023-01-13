@@ -8,7 +8,7 @@
     Enter the number of Results per Page: <input type="number" name="pageSize" [(ngModel)]="pageSize">
     <br>
     <br>
-    <input type="submit" (click)="getProducts()">
+    <input type="submit" (click)="getProducts()" value="Search">
 
 </form>
 
@@ -31,4 +31,4 @@
 
 # Products in Cart: {{cartQuantity}}
 
-<a [routerLink]="['/cart', cartProductData.toString()]">View Cart</a>
+<a [routerLink]="['/cart', cartProductData.toString()]">Check out</a>

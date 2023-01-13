@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { COMPOSITION_BUFFER_MODE } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CreatePurchaseModel } from 'src/app/models/CreatePurchaseModel';
+import { PurchaseService } from 'src/app/services/purchase.service';
 
 @Component({
   selector: 'app-finish-purchase',
@@ -15,8 +18,23 @@ export class FinishPurchaseComponent {
   id: string = "";
   fullName: string = "";
 
-  createProduct(){
-    console.log(this.purchaseData);
+  constructor(private purchaseService: PurchaseService, private router: Router )
+  {
+
+  }
+
+  createPurchase(){
+    const newPurchase: CreatePurchaseModel = {
+      idType: this.idType,
+      id: this.id,
+      clientName: this.fullName,
+      productIDs: this.purchaseData
+    }
+
+    this.purchaseService.createPurchase(newPurchase).subscribe();
+
+    this.router.navigate(['']);
+
   }
 
 

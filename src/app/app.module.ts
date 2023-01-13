@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FinishPurchaseComponent } from './components/finish-purchase/finish-purchase.component';
+import { PurchaseService } from './services/purchase.service';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    ProductService
+    ProductService,
+    PurchaseService
   ],
   bootstrap: [AppComponent]
 })
