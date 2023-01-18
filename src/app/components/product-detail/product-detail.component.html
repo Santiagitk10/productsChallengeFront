@@ -1,15 +1,19 @@
 <h1>Product Detail</h1>
 
-
 <form (ngSubmit)="editProduct()">
-    Product Name: <input type="text" name="productName"  [(ngModel)]="productName"><br><br>
-    Amount in Inventory: <input type="number" name="inInventory" [(ngModel)]="inInventory"><br><br>
-    Minimun purchase Amount: <input type="number" name="min" [(ngModel)]="min"><br><br>
-    Maximum purchase Amount: <input type="number" name="max" [(ngModel)]="max">
+    <label for="productName" class="form-label">Product Name</label>
+    <input id="productName" class="form-control" type="text" name="productName"  [(ngModel)]="productName">
+    <label for="inInventory" class="form-label">Amount in Inventory</label>
+    <input id="inInventory" class="form-control" type="number" name="inInventory" [(ngModel)]="inInventory">
+    <label for="min" class="form-label">Minimun purchase Amount</label>
+    <input id="min" class="form-control" type="number" name="min" [(ngModel)]="min">
+    <label for="max" class="form-label">Maximum purchase Amount</label>
+    <input id="max" class="form-control" type="number" name="max" [(ngModel)]="max">
     
     <br>
     <br>
 
-    <button >Edit</button>
+    <button class="btn btn-secondary">Edit</button>
 
 </form>
+

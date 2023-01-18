@@ -21,6 +21,8 @@ export class PurchaseListComponent implements OnInit {
       this.purchases = p;
     })
     
+    let anchorElement = document.getElementById("viewAllPurchasesAnchor");
+      anchorElement.classList.add("active");
     
 
   }

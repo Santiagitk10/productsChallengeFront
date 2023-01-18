@@ -1,34 +1,44 @@
 <h1>Products</h1>
 
-<form action="">
+<form id="paginationForm" action="">
 
-    Enter Page Number to bring from Register: <input type="number" name="pageNumber" [(ngModel)]="pageNumber"> 
-    <br>
-    <br>
-    Enter the number of Results per Page: <input type="number" name="pageSize" [(ngModel)]="pageSize">
-    <br>
-    <br>
-    <input type="submit" (click)="getProducts()" value="Search">
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="pageNumber" name="pageNumber" placeholder="Page Number" [(ngModel)]="pageNumber">
+        <label for="pageNumber">Page Number</label>
+      </div>
+      <div class="form-floating">
+        <input type="number" class="form-control" id="results" name="pageSize" placeholder="Results" [(ngModel)]="pageSize">
+        <label for="results">Results per Page</label>
+    </div>
+
+    <input type="submit" class="btn btn-warning mt-3" (click)="getProducts()" value="Search">
+    
 
 </form>
 
 <br>
 <br>
 
-<a href="/newProduct">New Product</a>  <br> <a href="/purchaseList">View All Purchases</a>
+<h4># Products in Cart: {{cartQuantity}}</h4>
+
+
+<a class="btn btn-success" [routerLink]="['/cart', cartProductData.toString()]">Check out</a>
+
 
 <br>
 <br>
+<div class="row">
+    <div class="col-sm-6 col-lg-4 col-xl-3 mb-3 mb-2" *ngFor="let product of products">
+        <div class="card " style="width: 250px">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a id="productDetail" [routerLink]="['/detail',product.productId]">{{product.productName  }}</a>
+                <a href="" (click)="deleteProduct(product.productId)" class="mb-5"><span id="spanSpace"><i class="fa-solid fa-trash mb-3"></i></span></a>
+                <app-add-to-cart (productPurchaseData)="addProductData($event)" [productId]="product.productId"></app-add-to-cart>
+            </div>
+        </div>
+    </div>
+</div>
+    
 
-<ul>
-    <li *ngFor="let product of products">
-        <a [routerLink]="['/detail',product.productId]">{{product.productName}}</a>
-        <span><a href="" (click)="deleteProduct(product.productId)" >  Delete</a></span>
-        <!-- <a [routerLink]="['/addToCart',product.productId]"> Add To Cart</a> -->
-        <app-add-to-cart (productPurchaseData)="addProductData($event)" [productId]="product.productId"></app-add-to-cart>
-    </li>
-</ul>
 
-# Products in Cart: {{cartQuantity}}
-
-<a [routerLink]="['/cart', cartProductData.toString()]">Check out</a>

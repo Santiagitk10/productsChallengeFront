@@ -2,7 +2,8 @@
 <br>
 <br>
 
-<table>
+<table class="table table-hover">
+  <thead class="table-dark">
     <tr>
       <th>Purchase ID</th>
       <th>Date</th>
@@ -12,6 +13,9 @@
       <th>Product ID</th>
       <th>Product Name</th>
     </tr>
+  </thead>
+    
+  <tbody>
     <tr *ngFor="let purchase of purchases">
       <td>{{purchase.purchaseId}}</td>
       <td>{{purchase.date}}</td>
@@ -21,4 +25,6 @@
       <td>{{purchase.productId}}</td>
       <td>{{purchase.productName}}</td>
     </tr>
+  </tbody>
+    
 </table>

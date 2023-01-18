@@ -17,6 +17,7 @@ export class FinishPurchaseComponent {
   idType: string = "";
   id: string = "";
   fullName: string = "";
+  errorMessage: string = null;
 
   constructor(private purchaseService: PurchaseService, private router: Router )
   {
@@ -31,9 +32,15 @@ export class FinishPurchaseComponent {
       productIDs: this.purchaseData
     }
 
-    this.purchaseService.createPurchase(newPurchase).subscribe();
+    this.purchaseService.createPurchase(newPurchase).subscribe(purchase => purchase,(err) => {
+      this.errorMessage = err.error.Message;
+    });
 
-    this.router.navigate(['']);
+    setTimeout(() => {
+      this.router.navigate(['']);
+    },3000);
+    
+    
 
   }
 

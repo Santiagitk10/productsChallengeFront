@@ -3,22 +3,33 @@
 <h1>Confirm Purchase</h1>
 
 
-<form (ngSubmit)="createPurchase()">
 
+
+
+<form id="purchaseForm" action="" (ngSubmit)="createPurchase()">
 
     <label for="typeId-select">Enter Type of ID: </label>
 
-    <select name="types" id="typeId-select" [(ngModel)]="idType">
+    <select name="types" id="typeId-select" class="form-select" aria-label="Default select example" [(ngModel)]="idType">
         <option value="CC">CC</option>
         <option value="CE">CE</option>
         <option value="TI">TI</option>
         <option value="PASSPORT">PASSPORT</option>
     </select>
 
-    Enter your ID: <input type="text" name="id" [(ngModel)]="id"><br><br>
-    Enter your Full Name: <input type="text" name="customerName" [(ngModel)]="fullName"><br><br>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="enterId" name="enterId" placeholder="Enter your ID" [(ngModel)]="id">
+        <label for="enterId">Enter your ID</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Results" [(ngModel)]="fullName">
+        <label for="fullName">Enter your Full Name</label>
+    </div>
 
-
-    <button [disabled]="id === '' || idType === '' || fullName === ''">Proceed</button>
+    <button [disabled]="id === '' || idType === '' || fullName === ''" class="btn btn-secondary">Proceed</button>
+    
 
 </form>
+
+<p id="errorMessage">{{errorMessage}}</p>
+

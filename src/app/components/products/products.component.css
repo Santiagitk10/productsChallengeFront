@@ -1,0 +1,30 @@
+#spanSpace {
+    margin-left: 15px;
+}
+
+i {
+    color: #ec6060;
+}
+
+#productDetail {
+    color: gray;
+}
+
+.form-control {
+    width: 150px;
+}
+
+.paginationForm {
+    display: flex;
+    align-items: right;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+
+.btn-success {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}

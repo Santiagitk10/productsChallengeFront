@@ -13,6 +13,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { FinishPurchaseComponent } from './components/finish-purchase/finish-purchase.component';
 import { PurchaseService } from './services/purchase.service';
 import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     AddToCartComponent,
     CartComponent,
     FinishPurchaseComponent,
-    PurchaseListComponent
+    PurchaseListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

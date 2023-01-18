@@ -1,4 +1,7 @@
 
-<label>Enter Quantity</label>
-<input type="number" #quantity [(ngModel)]="quantityInput" onkeydown="return false" min="0">
-<button (click)="addProductPurchaseData(quantity.value)" [disabled]="quantityInput === ''">Add To Cart</button>
+<div class="form-floating">
+    <input type="number" placeholder="Quantity" id="quantity" #quantity [(ngModel)]="quantityInput" onkeydown="return false" min="0" class="form-control">
+    <label for="quantity">Enter Quantity</label>
+    <button (click)="addProductPurchaseData(quantity.value)"  class="btn btn-secondary mt-3" [disabled]="quantityInput === ''">Add To Cart</button>
+</div>
+

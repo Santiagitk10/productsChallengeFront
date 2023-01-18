@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateProductModel } from 'src/app/models/CreateProductModel';
 import { ProductService } from 'src/app/services/product.service';
@@ -8,15 +8,20 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './new-product.component.html',
   styleUrls: ['./new-product.component.css']
 })
-export class NewProductComponent {
+export class NewProductComponent implements OnInit {
 
   productName: string = "";
   inInventory: number = 0;
   min: number = 0;
   max: number = 0;
-
   constructor(private router: Router, private productService: ProductService ){
 
+  }
+
+
+  ngOnInit(): void {
+    let anchorElement = document.getElementById("newProductAnchor");
+    anchorElement.classList.add("active");
   }
 
   createProduct(){
